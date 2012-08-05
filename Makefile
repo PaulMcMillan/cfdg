@@ -5,7 +5,7 @@ all: $(OBJS)
 
 
 %.png: %.cfdg
-	cfdg $^ $@
+	cfdg -s 750x750 $^ $@
 
 clean:
 	rm *.png
