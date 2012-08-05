@@ -1,18 +1,20 @@
 #!/usr/bin/env python
 """
-Render Context Free cfdgs for use on Kindle Touch.
-
-Setup Instructions
-------------
- * SSH into Kindle and run:
-   - mntroot rw
-   - mv -f /usr/share/blanket/screensaver /usr/share/blanket/screensaver.bak
-   - ln -sfn /mnt/us/screensaver /usr/share/blanket/screensaver
+Render Context Free cfdgs for use on Kindle Touch
+=================================================
 
 Usage
 -----
  * (optional) update TARGET_DIR to point to your mounted Kindle
  * ./kindle_render.py design1.cfdg design2.cfdg
+
+Setup Instructions
+------------------
+ * Jailbreak Kindle and set up networking
+ * SSH into Kindle and run:
+   - mntroot rw
+   - mv -f /usr/share/blanket/screensaver /usr/share/blanket/screensaver.bak
+   - ln -sfn /mnt/us/screensaver /usr/share/blanket/screensaver
 
 Additional Resources
 --------------------
@@ -37,7 +39,7 @@ if not os.path.exists(TARGET_DIR):
 
 if len(sys.argv) < 2:
     print "Please supply one or more filenames to render."
-    exit
+    exit()
 
 subprocess.call(['mkdir', '-p', TARGET_DIR])
 NEW_TEMPLATE = os.path.join(TARGET_DIR, 'bg_xsmall_ss%02d.png')
