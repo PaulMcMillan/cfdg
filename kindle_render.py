@@ -43,8 +43,10 @@ if len(sys.argv) < 2:
 
 subprocess.call(['mkdir', '-p', TARGET_DIR])
 NEW_TEMPLATE = os.path.join(TARGET_DIR, 'bg_xsmall_ss%02d.png')
+RENDER_SIZE = '600x800' # native screensaver size
+#RENDER_SIZE = '584x754' # native ebook size?
 
 for x in range(1, 100):
-    subprocess.call(['cfdg', '-s', '600x800',
+    subprocess.call(['cfdg', '-s', RENDER_SIZE,
                      random.choice(sys.argv[1:]),
                      NEW_TEMPLATE % x])
